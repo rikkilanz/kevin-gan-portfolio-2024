@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function App() {
   return (
     <>
-      <div className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-screen-2xl mx-auto">
+      <div className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-screen-2xl mx-auto px-8">
         <section className="w-full h-full border-2 border-black">
           <iframe
             height="100%"
@@ -17,18 +17,18 @@ export default function App() {
             className="w-full h-full aspect-video"
           ></iframe>
         </section>
-
-        <section>
-          <ProjectsList />
+        <section className="w-full h-full">
+          <ProjectsList categoryTitle="Projects" />
         </section>
         <section>
-          <div className="bg-blue-500 border-2 border-black text-white p-8 grid grid-cols-3 gap-16">
-            <div className="w-full h-auto bg-whtie border-2 border-black col-span-1 bg-white"></div>
-            <div className="col-span-2 flex flex-col gap-4">
-              <h2 className="text-4xl font-bold font-teko">
+          <div className="bg-main-500 border-2 border-black text-white p-8 grid grid-cols-3 gap-16 relative text-sm">
+            <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
+            <div className="w-full h-auto aspect-square border-2 border-black col-span-1 bg-white"></div>
+            <div className="col-span-2 flex flex-col justify-center">
+              <h2 className="text-5xl font-bold font-teko mb-2">
                 Hi, I'm Kevin Gan!
               </h2>
-              <div>
+              <div className="flex flex-col gap-4 text-bas mb-4">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                   facilisis orci vitae magna efficitur, ut vulputate est
@@ -46,7 +46,7 @@ export default function App() {
               </div>
               <Link
                 href="#"
-                className="uppercase p-3 font-bold text-black bg-white"
+                className="uppercase p-3 font-bold text-black bg-white self-start hover:bg-black hover:text-white"
               >
                 Learn More
               </Link>
