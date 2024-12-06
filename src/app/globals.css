@@ -37,3 +37,209 @@
   z-index: 999;
   pointer-events: none;
 }
+
+/* General Body and Typography */
+.wp-blog {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Headings */
+.wp-blog h1,
+.wp-blog h2,
+.wp-blog h3,
+.wp-blog h4,
+.wp-blog h5,
+.wp-blog h6 {
+  margin: 20px 0 10px;
+  font-weight: bold;
+  color: #222;
+  font-family: "Teko", sans-serif;
+}
+
+.wp-blog h1 {
+  font-size: 3.75em;
+  color: #335db6;
+  font-weight: bold;
+}
+.wp-blog h2 {
+  font-size: 2em;
+}
+.wp-blog h3 {
+  font-size: 1.75em;
+}
+.wp-blog h4 {
+  font-size: 1.5em;
+  border-width: 2px;
+  border-color: black;
+  padding: 2px 8px;
+  display: inline-block;
+}
+.wp-blog h5 {
+  font-size: 1.25em;
+}
+.wp-blog h6 {
+  font-size: 1em;
+}
+
+/* Paragraphs */
+.wp-blog p {
+  margin: 15px 0;
+}
+
+/* Links */
+.wp-blog a {
+  color: #0073aa;
+  text-decoration: none;
+}
+
+.wp-blog a:hover {
+  text-decoration: underline;
+  color: #005177;
+}
+
+/* Images */
+.wp-blog img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 15px 0;
+}
+
+.wp-blog .wp-caption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #666;
+}
+
+.wp-blog .wp-caption img {
+  margin-bottom: 5px;
+}
+
+.wp-blog .wp-caption-text {
+  margin: 0;
+}
+
+/* Blockquotes */
+.wp-blog blockquote {
+  margin: 20px;
+  padding: 15px 20px;
+  font-style: italic;
+  color: #555;
+  border-left: 5px solid #0073aa;
+  background-color: #f9f9f9;
+}
+
+/* Lists */
+.wp-blog ul,
+.wp-blog ol {
+  margin: 20px;
+  padding-left: 40px;
+}
+
+.wp-blog li {
+  margin-bottom: 10px;
+}
+
+/* Tables */
+.wp-blog table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.wp-blog th,
+.wp-blog td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.wp-blog th {
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+/* Code Blocks */
+.wp-blog pre,
+.wp-blog code {
+  font-family: "Courier New", Courier, monospace;
+  background: #f4f4f4;
+  color: #333;
+}
+
+.wp-blog pre {
+  padding: 15px;
+  overflow-x: auto;
+}
+
+.wp-blog code {
+  padding: 2px 4px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  color: #c7254e;
+}
+
+/* Buttons */
+.wp-blog .buttons .button {
+  display: inline-block;
+  padding: 10px 20px;
+  margin: 5px 0;
+  color: #fff;
+  background: #0073aa;
+  border: none;
+  text-align: center;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.wp-blog .buttons .button.secondary {
+  background: #555;
+}
+
+.wp-blog .buttons .button:hover {
+  background: #005177;
+}
+
+/* Forms */
+.wp-blog form {
+  margin: 20px 0;
+}
+
+.wp-blog label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.wp-blog input[type="text"],
+.wp-blog input[type="email"],
+.wp-blog textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+}
+
+.wp-blog button[type="submit"] {
+  padding: 10px 20px;
+  background: #0073aa;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.wp-blog button[type="submit"]:hover {
+  background: #005177;
+}
+
+/* Iframes (Videos) */
+.wp-blog iframe {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+  border: none;
+}

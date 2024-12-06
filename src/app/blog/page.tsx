@@ -5,7 +5,7 @@ export default function Blog() {
   return (
     <>
       <div className="px-8 mx-auto max-w-screen-2xl">
-        <PageHeading title="Blog" />
+        <PageHeading />
         <BlogCardList />
       </div>
     </>

@@ -28,7 +28,7 @@ export default function App() {
               <h2 className="text-5xl font-bold font-teko mb-2">
                 Hi, I'm Kevin Gan!
               </h2>
-              <div className="flex flex-col gap-4 text-bas mb-4">
+              <div className="flex flex-col gap-4 text-base mb-4">
                 <p>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                   facilisis orci vitae magna efficitur, ut vulputate est
@@ -45,7 +45,7 @@ export default function App() {
                 </p>
               </div>
               <Link
-                href="#"
+                href="/about"
                 className="uppercase p-3 font-bold text-black bg-white self-start hover:bg-black hover:text-white"
               >
                 Learn More

@@ -6,7 +6,6 @@ import Image from "next/image";
 
 export default function Header() {
   const path = usePathname();
-  console.log(path);
   return (
     <>
       <header className="flex justify-between items-center max-w-screen-2xl mx-auto p-8">
@@ -26,8 +25,8 @@ export default function Header() {
               className={`${
                 path === item.href
                   ? "bg-main-500 text-white border-black border-2"
-                  : ""
-              } text-md py-2 px-4 relative`}
+                  : "hover:underline"
+              } text-md py-2 px-4 relative `}
             >
               {path === item.href && (
                 <div className="absolute top-2 left-2 right-0 bottom-0 bg-black w-full h-full z-[-1]" />

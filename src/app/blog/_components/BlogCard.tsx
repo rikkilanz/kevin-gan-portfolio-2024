@@ -1,25 +1,31 @@
 import Link from "next/link";
 import Image from "next/image";
-export default function BlogCard() {
+import { convertDate } from "@/app/_helpers/convertDate";
+export default function BlogCard({ post }: { post: any }) {
   return (
     <>
       <div className="bg-white relative border-2 border-black flex">
         <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
-        <div className="min-w-[25%] h-auto aspect-square border-r-2 border-black col-span-1 bg-white"></div>
+        <div className="relative min-w-[25%] h-auto aspect-square border-r-2 border-black col-span-1 bg-white">
+          <Image
+            src={post._embedded["wp:featuredmedia"][0].source_url}
+            alt={post.title.rendered}
+            layout="fill"
+            objectFit="cover"
+          />
+        </div>
 
         <div className="p-8 flex flex-col justify-center gap-4">
-          <p className="text-sm">PUBLISHED ON OCTOBER 1, 2024</p>
+          <time className="text-sm uppercase" dateTime={convertDate(post.date)}>
+            {convertDate(post.date)}
+          </time>
 
           <h2 className=" font-teko text-main-500 font-bold text-5xl ">
-            This is a sample title of a blog page
+            {post.title.rendered}
           </h2>
-          <p className="">
-            Lorem ipsum dolor sit amet consectetur. Orci ut vel sed sed
-            elementum. Elementum velit felis fermentum maecenas justo euismod
-            nisl. Ornare risus lorem neque ipsum donec praesent risus.{" "}
-          </p>
+          <p dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
           <Link
-            href="#"
+            href={`/blog/${post.slug}`}
             className="uppercase p-3 font-bold text-white bg-main-500 self-start hover:bg-black"
           >
             Read More

@@ -34,11 +34,11 @@ const category = [
   },
 ];
 
-export default function Blog() {
+export default function Work() {
   return (
     <>
       <div className="px-8 mx-auto max-w-screen-2xl">
-        <PageHeading title="Work" />
+        <PageHeading />
         {category.map((category) => (
           <ProjectsList categoryTitle={category.title} />
         ))}
