@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { useEffect, useRef } from "react";
 
 export default function Cursor() {
@@ -14,15 +14,15 @@ export default function Cursor() {
       ypDot = 0;
 
     const handleMouseMove = (e: MouseEvent) => {
-      mouseX = e.pageX;
-      mouseY = e.pageY;
+      mouseX = e.clientX;
+      mouseY = e.clientY;
     };
 
     document.addEventListener("mousemove", handleMouseMove);
 
     const intervalId = setInterval(() => {
-      xp += (mouseX - xp) / 15;
-      yp += (mouseY - yp) / 15;
+      xp += (mouseX - xp) / 10;
+      yp += (mouseY - yp) / 10;
 
       if (cursorFollowerRef.current) {
         cursorFollowerRef.current.style.left = `${xp}px`;
@@ -31,8 +31,8 @@ export default function Cursor() {
     }, 5);
 
     const intervalDotId = setInterval(() => {
-      xpDot += (mouseX - xpDot) / 25;
-      ypDot += (mouseY - ypDot) / 25;
+      xpDot += (mouseX - xpDot) / 5;
+      ypDot += (mouseY - ypDot) / 5;
 
       if (cursorFollowerDotRef.current) {
         cursorFollowerDotRef.current.style.left = `${xpDot}px`;

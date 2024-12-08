@@ -1,5 +1,6 @@
 import { wpGetPostsBySlug } from "@/app/_services/wpService";
 import { convertDate } from "@/app/_helpers/convertDate";
+// import Image from "next/image";
 
 export default async function BlogPage({ params }: { params: any }) {
   const { slug } = await params;
@@ -10,23 +11,37 @@ export default async function BlogPage({ params }: { params: any }) {
   }
   return (
     <>
-      <div className="wp-blog bg-white border-2 border-black mx-auto max-w-screen-2xl py-16 relative">
-        <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
-        <div className="max-w-4xl mx-auto">
-          <div className="w-full mx-auto text-center">
-            <time
-              className="text-sm uppercase"
-              dateTime={convertDate(post.date)}
-            >
-              Published on {convertDate(post.date)}
-            </time>
+      <div className="px-8 flex">
+        <div className="wp-blog bg-white border-2 border-black mx-auto max-w-screen-2xl py-16 px-8 relative w-full">
+          <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
+          <div className="max-w-3xl mx-auto">
+            <div className="w-full mx-auto text-center">
+              {/* // Disabled because image is separate from body content */}
+              {/* <div className="relative min-w-[25%] h-auto aspect-square border-r-2 border-black col-span-1 bg-white">
+                <Image
+                  src={
+                    post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
+                    "/images/placeholder-image.jpg"
+                  }
+                  alt={post.title.rendered}
+                  layout="fill"
+                  objectFit="cover"
+                />
+              </div> */}
+              <time
+                className="text-sm uppercase"
+                dateTime={convertDate(post.date)}
+              >
+                Published on {convertDate(post.date)}
+              </time>
+            </div>
+            <h1 className="text-center">{post.title.rendered}</h1>
+            <h6
+              className="text-center"
+              dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+            />
+            <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
           </div>
-          <h1 className="text-center">{post.title.rendered}</h1>
-          <h6
-            className="text-center"
-            dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
-          />
-          <div dangerouslySetInnerHTML={{ __html: post.content.rendered }} />
         </div>
       </div>
     </>

@@ -7,10 +7,11 @@
   background-repeat: repeat;
   background-color: rgba(0, 0, 0, 0.1);
   position: absolute;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   z-index: -1;
   opacity: 0.1;
+  height: 100%;
 }
 
 .cursorFollower {
@@ -38,6 +39,10 @@
   pointer-events: none;
 }
 
+a:hover {
+  cursor: pointer; /* Ensures the default pointer behavior for links */
+}
+
 /* General Body and Typography */
 .wp-blog {
   font-family: Arial, sans-serif;
@@ -52,7 +57,7 @@
 .wp-blog h4,
 .wp-blog h5,
 .wp-blog h6 {
-  margin: 20px 0 10px;
+  margin: 5px 0 5px;
   font-weight: bold;
   color: #222;
   font-family: "Teko", sans-serif;
@@ -82,6 +87,9 @@
 .wp-blog h6 {
   font-size: 1em;
 }
+.wp-blog h6 p {
+  margin: 0px;
+}
 
 /* Paragraphs */
 .wp-blog p {
@@ -90,13 +98,13 @@
 
 /* Links */
 .wp-blog a {
-  color: #0073aa;
+  color: #335db6;
   text-decoration: none;
 }
 
 .wp-blog a:hover {
   text-decoration: underline;
-  color: #005177;
+  color: #335db6;
 }
 
 /* Images */
@@ -107,18 +115,24 @@
   margin: 15px 0;
 }
 
-.wp-blog .wp-caption {
+.wp-blog .wp-element-caption {
   text-align: center;
   font-size: 0.9em;
   color: #666;
+  margin: 0;
 }
 
 .wp-blog .wp-caption img {
   margin-bottom: 5px;
 }
 
-.wp-blog .wp-caption-text {
-  margin: 0;
+.wp-blog .wp-element-caption::after {
+  content: ")";
+  display: inline-block;
+}
+.wp-blog .wp-element-caption::before {
+  content: "(";
+  display: inline-block;
 }
 
 /* Blockquotes */
@@ -127,7 +141,7 @@
   padding: 15px 20px;
   font-style: italic;
   color: #555;
-  border-left: 5px solid #0073aa;
+  border-left: 5px solid #335db6;
   background-color: #f9f9f9;
 }
 
@@ -187,7 +201,7 @@
   padding: 10px 20px;
   margin: 5px 0;
   color: #fff;
-  background: #0073aa;
+  background: #335db6;
   border: none;
   text-align: center;
   border-radius: 3px;
@@ -199,7 +213,7 @@
 }
 
 .wp-blog .buttons .button:hover {
-  background: #005177;
+  background: #335db6;
 }
 
 /* Forms */
@@ -225,7 +239,7 @@
 
 .wp-blog button[type="submit"] {
   padding: 10px 20px;
-  background: #0073aa;
+  background: #335db6;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -233,13 +247,16 @@
 }
 
 .wp-blog button[type="submit"]:hover {
-  background: #005177;
+  background: #335db6;
 }
 
 /* Iframes (Videos) */
 .wp-blog iframe {
   max-width: 100%;
+  width: 100%;
   height: auto;
   margin: 20px 0;
   border: none;
+  aspect-ratio: 16 / 9; /* Ensures proper aspect ratio */
+  display: block;
 }

@@ -14,12 +14,6 @@ const tekoFont = Teko({
   subsets: ["latin"],
   variable: "--font-teko",
 });
-// const geistMono = localFont({
-//   src: "../../public/fonts/GeistMonoVF.woff",
-//   variable: "--font-geist-mono",
-//   weight: "100 900",
-// });
-
 export const metadata: Metadata = {
   title: "Kevin Gan",
   description: "Kevin Gan Audio SFX Portfolio 2024",

@@ -23,12 +23,12 @@ export default function Header() {
               href={item.href}
               key={item.id}
               className={`${
-                path === item.href
+                path?.includes(`${item.href}/`) || path === item.href
                   ? "bg-main-500 text-white border-black border-2"
                   : "hover:underline"
               } text-md py-2 px-4 relative `}
             >
-              {path === item.href && (
+              {(path?.includes(`${item.href}/`) || path === item.href) && (
                 <div className="absolute top-2 left-2 right-0 bottom-0 bg-black w-full h-full z-[-1]" />
               )}
               {item.title}

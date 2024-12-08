@@ -10,7 +10,7 @@ export default async function BlogCardList() {
       <div>
         <ul className="flex flex-col gap-8">
           {posts.map((post: any) => (
-            <BlogCard post={post} />
+            <BlogCard post={post} key={post.id} />
           ))}
         </ul>
         <Link href="/projects" className="w-full flex justify-center mt-16">
