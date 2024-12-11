@@ -1,7 +1,13 @@
 import ProjectsList from "./_components/ProjectsList";
 import Link from "next/link";
+import { wpGetPostsByCategory } from "./_services/wpService";
 
-export default function App() {
+export default async function App() {
+  const categoryId = 8;
+  const limit = 3;
+  const page = 1;
+  const { posts } = await wpGetPostsByCategory(categoryId, limit, page);
+  console.log(posts.length)
   return (
     <>
       <div className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-screen-2xl mx-auto px-8">
@@ -18,7 +24,7 @@ export default function App() {
           ></iframe>
         </section>
         <section className="w-full h-full">
-          <ProjectsList categoryTitle="Projects" />
+          <ProjectsList categoryTitle="Projects" posts={posts} />
         </section>
         <section>
           <div className="bg-main-500 border-2 border-black text-white p-8 grid grid-cols-3 gap-16 relative text-sm">
