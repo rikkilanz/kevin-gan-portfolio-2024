@@ -1,5 +1,4 @@
 import BlogCard from "./BlogCard";
-import Link from "next/link";
 import { wpGetPostsByCategory } from "@/app/_services/wpService";
 
 interface BlogCardListProps {

@@ -1,36 +1,47 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 interface ProjectsListProps {
   categoryTitle: string;
   posts: any[];
+  tags: any[];
+  projectsPage?: boolean;
 }
 export default function ProjectsList({
   categoryTitle,
   posts,
+  tags,
+  projectsPage,
 }: ProjectsListProps) {
-  console.log(posts);
+  const pathname = usePathname();
+  const [postCount, setPostCount] = useState(3);
+
+  const handleSeeMore = () => {
+    setPostCount((prev) => prev + 3);
+  };
+
+  useEffect(() => {}, [postCount]);
+
   return (
     <>
       <div className="py-6 w-full">
         <h2 className="text-4xl font-black font-teko">{categoryTitle}</h2>
-        <ul className="grid grid-cols-3 gap-8 mt-4">
-          {posts.map((post) => (
-            <li
-              className="border-2 border-black col-span-1 relative group"
+        <div
+          className={`grid gap-4 grid-cols-1 md:-cols-3 ${
+            projectsPage ? "md:grid-cols-1" : "md:grid-cols-3"
+          }`}
+        >
+          {posts.slice(0, postCount).map((post) => (
+            <Link
+              className="col-span-1 relative group"
               key={post.id}
+              href={`/work/${post.slug}`}
             >
-              <div className="bg-main-500 absolute inset-0 opacity-0 group-hover:opacity-75">
-                <div className="flex flex-col justify-center items-center h-full text-white">
-                  <h3 className="text-2xl font-bold">{post.title.rendered}</h3>
-                  <ul className="flex">
-                    <li>Tag 1</li>
-                    <li>Tag 2</li>
-                    <li>Tag 3</li>
-                  </ul>
-                </div>
-              </div>
-              <div className="relative min-w-[25%] h-auto aspect-video border-r-2 border-black col-span-1 bg-white">
+              <div className="relative min-w-[25%] h-auto aspect-video col-span-1 bg-white border-2 border-black">
                 <Image
                   src={
                     post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
@@ -41,14 +52,39 @@ export default function ProjectsList({
                   objectFit="cover"
                 />
               </div>
-            </li>
+              <div className="text-center text-black py-4">
+                <h3 className="text-xl font-bold group-hover:underline">
+                  {post.title.rendered}
+                </h3>
+                <hr className="my-2 w-[30px] mx-auto border-t-2 border-neutral-500" />
+                <ul className="flex gap-2 justify-center text-sm text-neutral-500 p-2">
+                  {post.tags.map((tagId: number) => {
+                    const tag = tags[tagId];
+                    return tag ? <li key={tag.id}>{tag.name}</li> : null;
+                  })}
+                </ul>
+              </div>
+            </Link>
           ))}
-        </ul>
-        <Link href="/projects" className="w-full flex justify-center my-4">
-          <span className="uppercase font-bold text-sm underline">
-            See More
-          </span>
-        </Link>
+        </div>
+        {pathname !== "/work" ? (
+          <Link href="/work" className="w-full flex justify-center my-4">
+            <span className="uppercase font-bold text-sm underline">
+              See More
+            </span>
+          </Link>
+        ) : (
+          <button
+            className="w-full flex justify-center my-4"
+            onClick={() => {
+              handleSeeMore();
+            }}
+          >
+            <span className="uppercase font-bold text-sm underline">
+              See More
+            </span>
+          </button>
+        )}
       </div>
     </>
   );

@@ -55,3 +55,16 @@ export async function wpGetPostsBySlug(slug: string) {
     throw new Error("Failed to fetch posts");
   }
 }
+
+export async function wpGetTagById(tagId: number) {
+  try {
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BASE_URL}/wp-json/wp/v2/tags/${tagId}`
+    );
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.error(error);
+    throw new Error("Failed to fetch tags");
+  }
+}

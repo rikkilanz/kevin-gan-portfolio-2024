@@ -1,47 +1,58 @@
 import ProjectsList from "../_components/ProjectsList";
 import PageHeading from "../_components/PageHeading";
+import { wpGetPostsByCategory, wpGetTagById } from "../_services/wpService";
 
-const category = [
+const categories = [
   {
     title: "Personal Projects",
-    projects: [
-      {
-        title: "Project Title",
-        tags: ["Tag 1", "Tag 2", "Tag 3"],
-        image: "https://dummyimage.com/1280x720/fff/aaa",
-      },
-    ],
+    categoryId: 9,
   },
   {
-    title: "Client Projects",
-    projects: [
-      {
-        title: "Project Title",
-        tags: ["Tag 1", "Tag 2", "Tag 3"],
-        image: "https://dummyimage.com/1280x720/fff/aaa",
-      },
-    ],
+    title: "Team Projects",
+    categoryId: 10,
   },
   {
     title: "Interactive Media",
-    projects: [
-      {
-        title: "Project Title",
-        tags: ["Tag 1", "Tag 2", "Tag 3"],
-        image: "https://dummyimage.com/1280x720/fff/aaa",
-      },
-    ],
+    categoryId: 11,
   },
 ];
 
-export default function Work() {
+export default async function Work() {
+  const limit = 100;
+  const page = 1;
+  const postsByCategory = await Promise.all(
+    categories.map(async (category) => {
+      const { posts } = await wpGetPostsByCategory(
+        category.categoryId,
+        limit,
+        page
+      );
+      const tagIds: any = [...new Set(posts.flatMap((post: any) => post.tags))];
+      const tags = await Promise.all(tagIds.map((id: any) => wpGetTagById(id)));
+      const tagsMap = Object.fromEntries(tags.map((tag) => [tag.id, tag]));
+
+      return {
+        categoryTitle: category.title,
+        posts,
+        tagsMap,
+      };
+    })
+  );
+
   return (
     <>
       <div className="px-8 mx-auto max-w-screen-2xl">
         <PageHeading />
-        {category.map((category) => (
-          <ProjectsList categoryTitle={category.title} />
-        ))}
+        {postsByCategory.map((categoryPosts, index) => {
+          return (
+            <ProjectsList
+              categoryTitle={categoryPosts.categoryTitle}
+              posts={categoryPosts.posts}
+              key={index}
+              tags={categoryPosts.tagsMap}
+            />
+          );
+        })}
       </div>
     </>
   );

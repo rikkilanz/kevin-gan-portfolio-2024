@@ -1,30 +1,30 @@
 import ProjectsList from "./_components/ProjectsList";
 import Link from "next/link";
-import { wpGetPostsByCategory } from "./_services/wpService";
+import { wpGetPostsByCategory, wpGetTagById } from "./_services/wpService";
 
 export default async function App() {
   const categoryId = 8;
   const limit = 3;
   const page = 1;
+  const reelCategoryId = 18;
   const { posts } = await wpGetPostsByCategory(categoryId, limit, page);
-  console.log(posts.length)
+  const { posts: reelPost } = await wpGetPostsByCategory(reelCategoryId, 1, 1);
+
+  const tagIds: any = [...new Set(posts.flatMap((post: any) => post.tags))];
+  const tags = await Promise.all(tagIds.map((id: any) => wpGetTagById(id)));
+  const tagsMap = Object.fromEntries(tags.map((tag) => [tag.id, tag]));
+
   return (
     <>
       <div className="flex flex-col gap-8 row-start-2 items-center sm:items-start max-w-screen-2xl mx-auto px-8">
         <section className="w-full h-full border-2 border-black">
-          <iframe
-            height="100%"
-            width="100%"
-            src="https://www.youtube.com/embed/wDchsz8nmbo?si=iRtfJ0oCAREADAaR"
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            className="w-full h-full aspect-video"
-          ></iframe>
+          <div
+            className="text-center"
+            dangerouslySetInnerHTML={{ __html: reelPost[0].content.rendered }}
+          />
         </section>
         <section className="w-full h-full">
-          <ProjectsList categoryTitle="Projects" posts={posts} />
+          <ProjectsList categoryTitle="Projects" posts={posts} tags={tagsMap} />
         </section>
         <section>
           <div className="bg-main-500 border-2 border-black text-white p-8 grid grid-cols-3 gap-16 relative text-sm">
