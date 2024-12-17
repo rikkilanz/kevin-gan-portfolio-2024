@@ -1,13 +1,13 @@
 import PageHeading from "../_components/PageHeading";
 import BlogCardList from "./_components/BlogCardList";
 
-export default async function Blog({
-  searchParams,
-}: {
-  searchParams: { page?: string };
-}) {
-  const pageParam = await searchParams.page; // Await the property
-  const page = parseInt(pageParam || "1", 10); // Default to page 1 if not provided
+type Props = {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export default async function Blog({ searchParams }: Props) {
+  const pageParam = await searchParams;
+  const page = parseInt((pageParam.page as string) || "1", 10);
   return (
     <>
       <div className="px-8 mx-auto max-w-screen-2xl">
