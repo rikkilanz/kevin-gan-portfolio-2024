@@ -9,9 +9,9 @@ export default function Library() {
         <section>
           <div>
             <ul className="flex flex-col gap-8">
-              <li className="bg-main-500 relative border-2 border-black flex">
+              <li className="bg-main-500 relative border-2 border-black flex flex-col md:flex-row">
                 <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
-                <div className="min-w-[40%] h-auto aspect-square border-r-2 border-black col-span-1 bg-white"></div>
+                <div className="min-w-[40%] h-auto aspect-square border-r-2 border-black bg-white"></div>
                 <div className="p-8 flex flex-col justify-center gap-4 text-white">
                   <h3 className="font-teko font-bold text-5xl ">
                     The Sound Pack
@@ -41,7 +41,7 @@ export default function Library() {
                   </Link>
                 </div>
               </li>
-              <li className="bg-main-500 relative border-2 border-black flex">
+              <li className="bg-main-500 relative border-2 border-black flex flex-col-reverse md:flex-row">
                 <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
                 <div className="p-8 flex flex-col justify-center gap-4 text-white">
                   <h3 className="font-teko font-bold text-5xl ">

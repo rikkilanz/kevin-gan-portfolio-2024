@@ -8,8 +8,8 @@ export default function About() {
         <section>
           <div className="bg-main-500 border-2 border-black text-white p-8 grid grid-cols-3 gap-16 relative text-sm">
             <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
-            <div className="w-full h-auto aspect-square border-2 border-black col-span-1 bg-white"></div>
-            <div className="col-span-2 flex flex-col justify-center">
+            <div className="w-full h-auto aspect-square border-2 border-black col-span-3 md:col-span-1 bg-white"></div>
+            <div className="col-span-3 md:col-span-2 flex flex-col justify-center">
               <h2 className="text-5xl font-bold font-teko mb-2">
                 Hi, I'm Kevin Gan!
               </h2>
@@ -57,7 +57,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="bg-white border-2 border-black p-8 gap-16 relative text-sm col-span-1">
+          <div className="bg-white border-2 border-black p-8 gap-16 relative text-sm col-span-3 md:col-span-1">
             <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
             <div className="flex flex-col justify-center">
               <h2 className="text-5xl font-bold font-teko mb-2 text-main-500">
@@ -72,7 +72,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="bg-white border-2 border-black p-8 gap-16 relative text-sm col-span-1">
+          <div className="bg-white border-2 border-black p-8 gap-16 relative text-sm col-span-3 md:col-span-1">
             <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
             <div className="flex flex-col justify-center">
               <h2 className="text-5xl font-bold font-teko mb-2 text-main-500">
@@ -87,7 +87,7 @@ export default function About() {
               </div>
             </div>
           </div>
-          <div className="bg-white border-2 border-black p-8 gap-16 relative text-sm col-span-1">
+          <div className="bg-white border-2 border-black p-8 gap-16 relative text-sm col-span-3 md:col-span-1">
             <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
             <div className="flex flex-col justify-center">
               <h2 className="text-5xl font-bold font-teko mb-2 text-main-500">

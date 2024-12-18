@@ -1,14 +1,20 @@
 "use client";
+import { useState } from "react";
 import { headerData } from "./header.data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const path = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+
   return (
-    <>
-      <header className="flex justify-between items-center max-w-screen-2xl mx-auto p-8">
+    <header className="max-w-screen-2xl mx-auto p-4 md:p-8">
+      <div className="flex justify-between items-center">
         <Link href="/">
           <Image
             src={"/images/logos/kevin-gan-logo-no-bg.png"}
@@ -17,7 +23,7 @@ export default function Header() {
             height={100}
           />
         </Link>
-        <nav className="flex gap-8">
+        <nav className="hidden md:flex gap-8">
           {headerData.map((item) => (
             <Link
               href={item.href}
@@ -35,7 +41,29 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-      </header>
-    </>
+        <button className="md:hidden" onClick={toggleMenu}>
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
+      {isMenuOpen && (
+        <nav className="md:hidden mt-4">
+          {headerData.map((item) => (
+            <Link
+              href={item.href}
+              key={item.id}
+              className={`${
+                path?.includes(`${item.href}/`) || path === item.href
+                  ? "bg-main-500 text-white border-black border-2"
+                  : "hover:bg-gray-100"
+              } block py-2 px-4 mb-2`}
+              onClick={toggleMenu}
+            >
+              {item.title}
+            </Link>
+          ))}
+        </nav>
+      )}
+    </header>
   );
 }
+

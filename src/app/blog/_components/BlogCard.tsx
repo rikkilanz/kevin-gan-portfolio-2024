@@ -4,9 +4,9 @@ import { convertDate } from "@/app/_helpers/convertDate";
 export default function BlogCard({ post }: { post: any }) {
   return (
     <>
-      <div className="bg-white relative border-2 border-black flex">
+      <div className="bg-white relative border-2 border-black flex flex-col md:flex-row">
         <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
-        <div className="relative min-w-[25%] h-auto aspect-square border-r-2 border-black col-span-1 bg-white">
+        <div className="relative min-w-[25%] h-auto aspect-video md:aspect-square border-r-2 border-black bg-white">
           <Image
             src={
               post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
@@ -26,7 +26,10 @@ export default function BlogCard({ post }: { post: any }) {
           <h2 className=" font-teko text-main-500 font-bold text-5xl ">
             {post.title.rendered}
           </h2>
-          <div dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }} />
+          <div
+            className="line-clamp-3 text-ellipsis"
+            dangerouslySetInnerHTML={{ __html: post.excerpt.rendered }}
+          />
           <Link
             href={`/blog/${post.slug}`}
             className="uppercase p-3 font-bold text-white bg-main-500 self-start hover:bg-black"

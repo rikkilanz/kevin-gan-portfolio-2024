@@ -45,7 +45,7 @@ export default async function WorkPage({ params }: { params: any }) {
           />
         </div>
         <div className="mb-8 max-w-screen-2xl mx-auto w-full h-full">
-          <div className="relative min-w-[25%] h-auto aspect-video border-r-2 border-black col-span-1 bg-white ">
+          <div className="relative min-w-[25%] h-auto aspect-video border-r-2 col-span-1 bg-white ">
             <Image
               src={
                 post._embedded?.["wp:featuredmedia"]?.[0]?.source_url ||
@@ -59,18 +59,18 @@ export default async function WorkPage({ params }: { params: any }) {
         </div>
 
         <div className="grid grid-cols-5 mx-auto max-w-screen-2xl w-full gap-4">
-          <div className="col-span-2 flex flex-col gap-4">
+          <div className="col-span-5 md:col-span-2 flex flex-col gap-4">
             <div className="bg-white border-2 border-black p-4 relative w-full">
               <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
-              <div className="flex flex-col gap-4">
+              <div className="grid grid-cols-2 gap-4">
                 {Object.keys(post.acf).map((key, index) => {
                   const ids = post.acf[key];
                   return (
-                    <div key={index}>
+                    <div key={index} className="col-span-1">
                       <h3 className="bg-main text-white font-teko font-bold p-2 text-2xl inline-block capitalize">
                         {key}
                       </h3>
-                      <ul className="flex">
+                      <ul className="flex flex-wrap">
                         {ids.map((id: number, subIndex: number) => (
                           <li
                             key={subIndex}
@@ -86,7 +86,7 @@ export default async function WorkPage({ params }: { params: any }) {
                 })}
               </div>
             </div>
-            <div className="bg-white border-2 border-black p-4 relative w-full">
+            <div className="bg-white border-2 border-black p-4 relative w-full md:block hidden">
               <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
               <ProjectsList
                 posts={posts}
@@ -96,13 +96,22 @@ export default async function WorkPage({ params }: { params: any }) {
               />
             </div>
           </div>
-          <div className="wp-blog bg-white border-2 border-black py-16 px-8 relative w-full col-span-3">
+          <div className="wp-blog bg-white border-2 border-black py-16 px-8 relative w-full col-span-5 md:col-span-3">
             <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
             <div className="max-w-3xl mx-auto">
               <div
                 dangerouslySetInnerHTML={{ __html: post.content.rendered }}
               />
             </div>
+          </div>
+          <div className="bg-white border-2 border-black p-4 relative w-full block md:hidden col-span-5">
+            <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
+            <ProjectsList
+              posts={posts}
+              categoryTitle="Other Projects"
+              tags={otherProjectsTagsMap}
+              projectsPage={true}
+            />
           </div>
         </div>
       </div>
