@@ -47,7 +47,7 @@ export default function DateFilter({
         }}
         value={selectedDate}
       >
-        <option value="0">Filter by date...</option>
+        <option value="0">All Posts</option>
         {monthYearArray.map((date: any) => (
           <option key={date} value={date}>
             {convertDate(date)}
