@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.background-image {
+/* .background-image {
   background-image: url("/images/pattern-overlay.jpg");
   background-repeat: repeat;
   background-color: rgba(0, 0, 0, 0.1);
@@ -12,7 +12,7 @@
   z-index: -1;
   opacity: 0.1;
   height: 100%;
-}
+} */
 
 .cursorFollower {
   position: fixed;

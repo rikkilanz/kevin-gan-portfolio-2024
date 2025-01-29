@@ -1,3 +1,5 @@
+import { before } from "node:test";
+
 export async function wpGetPosts() {
   try {
     const response = await fetch(
@@ -14,11 +16,18 @@ export async function wpGetPosts() {
 export async function wpGetPostsByCategory(
   categoryId: number,
   limit: number = 5,
-  page: number = 1
+  page: number = 1,
+  before?: string,
+  after?: string
 ) {
   try {
+    console.log(before);
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_BASE_URL}/wp-json/wp/v2/posts?_embed&categories=${categoryId}&per_page=${limit}&orderby=date&page=${page}`
+      `${
+        process.env.NEXT_PUBLIC_BASE_URL
+      }/wp-json/wp/v2/posts?_embed&categories=${categoryId}&per_page=${limit}&orderby=date&page=${page}${
+        before && before !== "0-31T00:00:00" ? `&before=${before}` : ""
+      }${after && after !== "0-01T00:00:00" ? `&after=${after}` : ""}`
     );
 
     // Check if the response is successful

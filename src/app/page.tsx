@@ -23,9 +23,6 @@ export default async function App() {
             dangerouslySetInnerHTML={{ __html: reelPost[0].content.rendered }}
           />
         </section>
-        <section className="w-full h-full">
-          <ProjectsList categoryTitle="Projects" posts={posts} tags={tagsMap} />
-        </section>
         <section>
           <div className="bg-main-500 border-2 border-black text-white p-8 grid grid-cols-3 gap-16 relative text-sm">
             <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
@@ -58,6 +55,9 @@ export default async function App() {
               </Link>
             </div>
           </div>
+        </section>
+        <section className="w-full h-full">
+          <ProjectsList categoryTitle="Projects" posts={posts} tags={tagsMap} />
         </section>
       </div>
     </>
