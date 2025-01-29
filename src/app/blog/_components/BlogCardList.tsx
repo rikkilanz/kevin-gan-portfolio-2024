@@ -23,7 +23,7 @@ export default async function BlogCardList({
     after
   );
 
-  var dates: string[] = [];
+  let dates: string[] = [];
 
   await wpGetPosts().then((data) => {
     data.forEach((post: any) => {
@@ -47,8 +47,6 @@ export default async function BlogCardList({
 
   // Extract unique month/year keys as an array
   const monthYearArray = Object.keys(groupedByMonthYear);
-
-  console.log(totalPages);
 
   return (
     <>

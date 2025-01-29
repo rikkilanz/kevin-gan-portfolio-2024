@@ -1,5 +1,3 @@
-import { before } from "node:test";
-
 export async function wpGetPosts() {
   try {
     const response = await fetch(
@@ -21,7 +19,6 @@ export async function wpGetPostsByCategory(
   after?: string
 ) {
   try {
-    console.log(before);
     const response = await fetch(
       `${
         process.env.NEXT_PUBLIC_BASE_URL
