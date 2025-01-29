@@ -23,7 +23,7 @@ export default async function BlogCardList({
     after
   );
 
-  let dates: string[] = [];
+  const dates: string[] = [];
 
   await wpGetPosts().then((data) => {
     data.forEach((post: any) => {
