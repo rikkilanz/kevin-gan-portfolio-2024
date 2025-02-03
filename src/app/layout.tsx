@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Footer from "./_components/Footer";
 import "./globals.css";
 import { Nunito_Sans, Teko } from "next/font/google";
