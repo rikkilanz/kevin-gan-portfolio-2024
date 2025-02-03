@@ -3,7 +3,7 @@ import Image from "next/image";
 import { wpGetTagById, wpGetPostsByCategory } from "@/app/_services/wpService";
 import ProjectsList from "@/app/_components/ProjectsList";
 
-export default async function WorkPage({ params }: { params: any }) {
+export default async function PortfolioPage({ params }: { params: any }) {
   const categoryId = 8;
   const limit = 3;
   const page = 1;

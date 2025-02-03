@@ -6,8 +6,8 @@ export const headerData = [
   },
   {
     id: 2,
-    title: "Work",
-    href: "/work",
+    title: "Portfolio",
+    href: "/portfolio",
   },
   {
     id: 3,

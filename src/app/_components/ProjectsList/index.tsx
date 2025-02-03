@@ -41,7 +41,7 @@ export default function ProjectsList({
             <Link
               className="col-span-1 relative group"
               key={post.id}
-              href={`/work/${post.slug}`}
+              href={`/portfolio/${post.slug}`}
             >
               <div className="relative min-w-[25%] h-auto aspect-video col-span-1 bg-white border-2 border-black">
                 <Image
@@ -69,8 +69,8 @@ export default function ProjectsList({
             </Link>
           ))}
         </div>
-        {pathname !== "/work" ? (
-          <Link href="/work" className="w-full flex justify-center my-4">
+        {pathname !== "/portfolio" ? (
+          <Link href="/portfolio" className="w-full flex justify-center my-4">
             <span className="uppercase font-bold text-sm underline">
               See More
             </span>

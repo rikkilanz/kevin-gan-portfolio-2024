@@ -17,7 +17,7 @@ const categories = [
   },
 ];
 
-export default async function Work() {
+export default async function Portfolio() {
   const limit = 100;
   const page = 1;
   const postsByCategory = await Promise.all(

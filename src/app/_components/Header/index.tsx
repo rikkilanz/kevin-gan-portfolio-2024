@@ -4,7 +4,7 @@ import { headerData } from "./header.data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { Menu, X } from 'lucide-react';
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const path = usePathname();
@@ -13,8 +13,8 @@ export default function Header() {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
-    <header className="max-w-screen-2xl mx-auto p-4 md:p-8">
-      <div className="flex justify-between items-center">
+    <header className="p-4 md:p-8 pb-2 md:pb-6 mb-8 shadow-md ">
+      <div className="flex justify-between items-center max-w-screen-2xl mx-auto">
         <Link href="/">
           <Image
             src={"/images/logos/kevin-gan-logo-no-bg.png"}
@@ -66,4 +66,3 @@ export default function Header() {
     </header>
   );
 }
-
