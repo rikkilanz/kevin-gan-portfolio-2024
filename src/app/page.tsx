@@ -33,18 +33,9 @@ export default async function App() {
               </h2>
               <div className="flex flex-col gap-4 text-base mb-4">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                  facilisis orci vitae magna efficitur, ut vulputate est
-                  suscipit. Fusce efficitur euismod orci, vitae tincidunt elit
-                  dictum sed. Integer euismod arcu id enim dictum, quis posuere
-                  magna vestibulum.
-                </p>
-                <p>
-                  Curabitur convallis felis a libero volutpat, at vulputate
-                  felis feugiat. In facilisis justo vitae justo accumsan, in
-                  sodales neque fringilla. Aliquam tincidunt, turpis ut varius
-                  lacinia, lectus lorem fermentum ipsum, id faucibus metus
-                  turpis at velit. Etiam vehicula auctor tellus at condimentum.
+                  Hi! My name is Kevin, a 23-year-old Sound Editor& Audio
+                  Engineer from the beautiful city of Vancouver, British
+                  Columbia in Canada.
                 </p>
               </div>
               <Link
