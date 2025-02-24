@@ -27,11 +27,13 @@ export default async function PortfolioPage({ params }: { params: any }) {
         .map((id: any) => id)
     ),
   ];
+
   const tags = await Promise.all(allTagIds.map((id: any) => wpGetTagById(id)));
   const tagsMap = Object.fromEntries(tags.map((tag) => [tag.id, tag]));
   if (!post) {
     return <div>Loading...</div>;
   }
+
   return (
     <>
       <div className="px-8 flex flex-col">
