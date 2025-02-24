@@ -60,7 +60,6 @@ export default function ProjectsList({
                 <ul className="flex gap-2 justify-center text-sm text-neutral-500 p-2">
                   {post.acf.role.map((tagId: number) => {
                     const tag = tags[tagId];
-                    // console.log(tagId);
                     return tag ? <li key={tag.id}>{tag.name}</li> : null;
                   })}
                 </ul>

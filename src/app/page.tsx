@@ -10,7 +10,7 @@ export default async function App() {
   const { posts } = await wpGetPostsByCategory(categoryId, limit, page);
   const { posts: reelPost } = await wpGetPostsByCategory(reelCategoryId, 1, 1);
 
-  const tagIds: any = [...new Set(posts.flatMap((post: any) => post.tags))];
+  const tagIds: any = [...new Set(posts.flatMap((post: any) => post.acf.role))];
   const tags = await Promise.all(tagIds.map((id: any) => wpGetTagById(id)));
   const tagsMap = Object.fromEntries(tags.map((tag) => [tag.id, tag]));
 

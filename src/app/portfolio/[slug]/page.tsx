@@ -10,7 +10,7 @@ export default async function PortfolioPage({ params }: { params: any }) {
   const { posts } = await wpGetPostsByCategory(categoryId, limit, page);
   const { slug } = await params;
 
-  const tagIds: any = [...new Set(posts.flatMap((post: any) => post.tags))];
+  const tagIds: any = [...new Set(posts.flatMap((post: any) => post.acf.role))];
   const otherProjectTags = await Promise.all(
     tagIds.map((id: any) => wpGetTagById(id))
   );
