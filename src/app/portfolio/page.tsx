@@ -27,7 +27,9 @@ export default async function Portfolio() {
         limit,
         page
       );
-      const tagIds: any = [...new Set(posts.flatMap((post: any) => post.tags))];
+      const tagIds: any = [
+        ...new Set(posts.flatMap((post: any) => post.acf.role)),
+      ];
       const tags = await Promise.all(tagIds.map((id: any) => wpGetTagById(id)));
       const tagsMap = Object.fromEntries(tags.map((tag) => [tag.id, tag]));
 

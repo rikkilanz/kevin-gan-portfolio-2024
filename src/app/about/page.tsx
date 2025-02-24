@@ -15,18 +15,33 @@ export default function About() {
               </h2>
               <div className="flex flex-col gap-4 text-base mb-4">
                 <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
-                  facilisis orci vitae magna efficitur, ut vulputate est
-                  suscipit. Fusce efficitur euismod orci, vitae tincidunt elit
-                  dictum sed. Integer euismod arcu id enim dictum, quis posuere
-                  magna vestibulum.
+                  I played the guitar and drums and dreamt of becoming a
+                  musician when I was in High School, so I dived into the audio
+                  industry as my curiosity grew about the "How and Why" Sound
+                  works. One day, I was introduced to Art of Foley and The
+                  Deception Of Sound Design on YouTube and I was immediately
+                  enthralled and inspired to pursue a career in the audio
+                  industry combining my passion for both creative and technical
+                  aspects of Sound Design.
                 </p>
+
                 <p>
-                  Curabitur convallis felis a libero volutpat, at vulputate
-                  felis feugiat. In facilisis justo vitae justo accumsan, in
-                  sodales neque fringilla. Aliquam tincidunt, turpis ut varius
-                  lacinia, lectus lorem fermentum ipsum, id faucibus metus
-                  turpis at velit. Etiam vehicula auctor tellus at condimentum.
+                  Since graduating from Vancouver Film School's Sound Design For
+                  Visual Media Program in March of 2022 and Certified as an Avid
+                  Pro Tool User, I've been focusing on my crafts & skills in
+                  terms of Sound Design, Foley, Dialogue, Audio Recording and
+                  mixing for a variety of different projects.
+                </p>
+
+                <p>
+                  In my free time, I enjoy improving my guitar fingerstyle
+                  skills, practicing Japanese and Chinese, going to the gym or
+                  finishing off lists of animes, games and movies which I swore
+                  to finish "someday".
+                </p>
+
+                <p>
+                  I will be updating this website as my audio journey continues.
                 </p>
               </div>
             </div>

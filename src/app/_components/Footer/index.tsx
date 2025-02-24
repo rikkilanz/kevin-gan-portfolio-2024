@@ -9,15 +9,21 @@ export default function Footer() {
         <div className="max-w-screen-2xl mx-auto flex flex-col-reverse md:flex-row justify-between items-center py-8 text-white">
           <div className="flex flex-col items-center justify-center md:justify-start md:items-start gap-16">
             <div className="text-center md:text-left">
-              <h3 className="text-3xl font-teko font-bold">Connect with me!</h3>
+              <h3 className="text-3xl font-teko font-bold">Let's chat! </h3>
               <p className="text-md">
-                Send me an email at kevingan1212@gmail.com...
+                Whether it's a project, a question, or just to say hi— I'd love
+                to hear from you!
+              </p>
+              <p>
+                You can reach out at:{" "}
+                <a href="mailto:kevingan122@icloud.com" className="underline">
+                  kevingan122@icloud.com
+                </a>
               </p>
             </div>
             <nav className="flex gap-8">
               {footerData.map((item) => (
                 <Link href={item.href} key={item.id}>
-                  {/* {item.icon} */}
                   <Image
                     src={item.icon}
                     width={100}
