@@ -11,8 +11,8 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
       {
-        protocol: 'https',
-        hostname: 'kgsounds.info',
+        protocol: 'http',
+        hostname: 'kevinganportfolio.opusspace.ca',
         port: '',
         pathname: '/**',
       },

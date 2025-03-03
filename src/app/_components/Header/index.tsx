@@ -21,6 +21,7 @@ export default function Header() {
             alt="Kevin Gan logo 2024"
             width={100}
             height={100}
+            priority
           />
         </Link>
         <nav className="hidden md:flex gap-8">
