@@ -2,6 +2,16 @@ import PageHeading from "../_components/PageHeading";
 import Link from "next/link";
 
 export default function Library() {
+  const fetchLibraryPage = async () => {
+    const response = await fetch(
+      "http://kevinganportfolio.opusspace.ca/wp-json/wp/v2/pages/1817"
+    );
+    const data = await response.json();
+    console.log(data);
+  };
+
+  fetchLibraryPage();
+
   return (
     <>
       <div className="px-8 mx-auto max-w-screen-2xl">
@@ -13,6 +23,9 @@ export default function Library() {
                 <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
                 <div className="min-w-[40%] h-auto aspect-square border-r-2 border-black bg-white"></div>
                 <div className="p-8 flex flex-col justify-center gap-4 text-white">
+                  <div >
+                    {}
+                  </div>
                   <h3 className="font-teko font-bold text-5xl ">
                     The Sound Pack
                   </h3>
