@@ -1,20 +1,15 @@
 import PageHeading from "../_components/PageHeading";
 import Link from "next/link";
 
-export default function Library() {
-  const fetchLibraryPage = async () => {
-    const response = await fetch(
-      "http://kevinganportfolio.opusspace.ca/wp-json/wp/v2/pages/1817"
-    );
-    const data = await response.json();
-    console.log(data);
-  };
-
-  fetchLibraryPage();
-
+export default async function Library() {
+  const response = await fetch(
+    "http://kevinganportfolio.opusspace.ca/wp-json/wp/v2/pages/1817"
+    // { next: { revalidate: 60 } } // Optional: Revalidates data every 60 seconds for ISR.
+  );
+  const data = await response.json();
   return (
     <>
-      <div className="px-8 mx-auto max-w-screen-2xl">
+      {/* <div className="px-8 mx-auto max-w-screen-2xl">
         <PageHeading />
         <section>
           <div>
@@ -150,7 +145,9 @@ export default function Library() {
             </a>
           </div>
         </section>
-      </div>
+      </div> */}
+      <PageHeading />
+      <div className="library-page px-8 mx-auto max-w-screen-2xl" dangerouslySetInnerHTML={{ __html: data.content.rendered }}></div>
     </>
   );
 }

@@ -265,7 +265,14 @@ iframe {
 }
 
 .bg-gradient {
-  background: linear-gradient(45deg, #ffffff, #ebeff8, #99aedb, #ebeff8, #ffffff);
+  background: linear-gradient(
+    45deg,
+    #ffffff,
+    #ebeff8,
+    #99aedb,
+    #ebeff8,
+    #ffffff
+  );
   background-size: 400% 400%;
   animation: gradient 60s ease infinite;
   height: 100%;
@@ -280,5 +287,43 @@ iframe {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+.library-section {
+  @apply flex flex-col gap-8;
+}
+
+.library-card {
+  @apply flex flex-col gap-4;
+}
+
+.library-card {
+  .wp-block-button {
+    @apply uppercase p-3 font-bold text-black bg-white self-start hover:bg-black hover:text-white;
+  }
+}
+
+.card-2 {
+  @apply flex-row-reverse;
+}
+
+.extended-library-section {
+  @apply mb-16;
+  
+}
+
+.extended-library-section {
+  h2 {
+    @apply font-teko font-bold text-5xl pt-16 text-center;
+  }
+  p {
+    @apply text-center max-w-4xl mx-auto mt-4;
+  }
+  .wp-block-button {
+    @apply text-center mt-8;
+  }
+  a {
+    @apply uppercase p-3 font-bold text-white bg-black text-center;
   }
 }
