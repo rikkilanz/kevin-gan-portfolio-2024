@@ -1,10 +1,14 @@
 import PageHeading from "../_components/PageHeading";
-import Link from "next/link";
 
-export default function Library() {
+export default async function Library() {
+  const response = await fetch(
+    "http://kevinganportfolio.opusspace.ca/wp-json/wp/v2/pages/1817"
+    // { next: { revalidate: 60 } } // Optional: Revalidates data every 60 seconds for ISR.
+  );
+  const data = await response.json();
   return (
     <>
-      <div className="px-8 mx-auto max-w-screen-2xl">
+      {/* <div className="px-8 mx-auto max-w-screen-2xl">
         <PageHeading />
         <section>
           <div>
@@ -13,6 +17,9 @@ export default function Library() {
                 <div className="absolute bg-black top-2 left-2 right-0 bottom-0 z-[-1] w-full h-full" />
                 <div className="min-w-[40%] h-auto aspect-square border-r-2 border-black bg-white"></div>
                 <div className="p-8 flex flex-col justify-center gap-4 text-white">
+                  <div >
+                    {}
+                  </div>
                   <h3 className="font-teko font-bold text-5xl ">
                     The Sound Pack
                   </h3>
@@ -137,7 +144,12 @@ export default function Library() {
             </a>
           </div>
         </section>
-      </div>
+      </div> */}
+      <PageHeading />
+      <div
+        className="library-page px-8 mx-auto max-w-screen-2xl"
+        dangerouslySetInnerHTML={{ __html: data.content.rendered }}
+      ></div>
     </>
   );
 }
