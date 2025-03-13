@@ -1,5 +1,4 @@
 import PageHeading from "../_components/PageHeading";
-import Link from "next/link";
 
 export default async function Library() {
   const response = await fetch(
