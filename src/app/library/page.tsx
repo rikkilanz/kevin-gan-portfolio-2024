@@ -147,7 +147,10 @@ export default async function Library() {
         </section>
       </div> */}
       <PageHeading />
-      <div className="library-page px-8 mx-auto max-w-screen-2xl" dangerouslySetInnerHTML={{ __html: data.content.rendered }}></div>
+      <div
+        className="library-page px-8 mx-auto max-w-screen-2xl"
+        dangerouslySetInnerHTML={{ __html: data.content.rendered }}
+      ></div>
     </>
   );
 }
