@@ -76,13 +76,39 @@ export default function About() {
             <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
             <div className="flex flex-col justify-center">
               <h2 className="text-5xl font-bold font-teko mb-2 text-main-500">
-                Skills
+                Studio Equipment
               </h2>
               <div className="flex flex-col gap-4 text-base mb-4">
-                <ul>
-                  <li>- Skill 1</li>
-                  <li>- Skill 2</li>
-                  <li>- Skill 3</li>
+                <ul className="list-none">
+                  <li>
+                    <strong>Computer:</strong>
+                  </li>
+                  <ul className="ml-4 list-disc">
+                    <li>Mac (Retina 5K, 27-inch, 2020)</li>
+                    <li>Processor: 3.1 GHz 6-Core Intel Core i5</li>
+                    <li>Ram: 32 GB 2667 MHz DDR4</li>
+                    <li>Storage: 500 GB</li>
+                  </ul>
+                  <li className="mt-2">
+                    <strong>Dell G7 15-7500 Computer:</strong>
+                  </li>
+                  <ul className="ml-4 list-disc">
+                    <li>Processor: 5.0GHz, 6 cores, Intel i7-10750H 2.60GHz</li>
+                    <li>Ram: 32G 2x16G, DDR4, 2933MHz</li>
+                    <li>Storage: 1TB</li>
+                  </ul>
+                  <li className="mt-2">
+                    <strong>Hardware:</strong>
+                  </li>
+                  <ul className="ml-4 list-disc">
+                    <li>Focusrite Scarlette 2i2</li>
+                    <li>2 X JBL 306PMKII Professional Monitor</li>
+                    <li>Audio-Technica ATH-M50x Headphones</li>
+                    <li>Apple Magic Keyboard + Numeric Pad</li>
+                    <li>Seagate HDD 1TB External Hard Drive</li>
+                    <li>ABIWAZY Dual HDMI Monitor Adapter Docking Station</li>
+                    <li>Logitech MX Ergo Wireless Trackball Mouse</li>
+                  </ul>
                 </ul>
               </div>
             </div>
@@ -91,13 +117,32 @@ export default function About() {
             <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
             <div className="flex flex-col justify-center">
               <h2 className="text-5xl font-bold font-teko mb-2 text-main-500">
-                Tools
+                Software
               </h2>
               <div className="flex flex-col gap-4 text-base mb-4">
-                <ul>
-                  <li>- Tools 1</li>
-                  <li>- Tools 2</li>
-                  <li>- Tools 3</li>
+                <ul className="list-none">
+                  <li>
+                    <strong>DAWS:</strong> Pro Tools (IOS), Reaper (PC)
+                  </li>
+                  <li>
+                    <strong>Audio Library:</strong> Soundly, Sound Q
+                  </li>
+                  <li>
+                    <strong>Plug-ins:</strong>
+                  </li>
+                  <ul className="ml-4 list-disc">
+                    <li>Soundtoys Complete Bundle</li>
+                    <li>
+                      RX 9 advanced/Dialogue Match/Loudness Control/Neoverb
+                    </li>
+                    <li>Fabiliter Complete Bundle</li>
+                    <li>GRM Tools Complete 2</li>
+                    <li>Valhalla Supermassive/FreEcho</li>
+                    <li>Kontakt</li>
+                    <li>Kilohearts Essentials Bundle</li>
+                    <li>Xfer: Serum</li>
+                    <li>UVI: Whoosh FX</li>
+                  </ul>
                 </ul>
               </div>
             </div>
@@ -106,13 +151,31 @@ export default function About() {
             <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
             <div className="flex flex-col justify-center">
               <h2 className="text-5xl font-bold font-teko mb-2 text-main-500">
-                Equipment
+                Studio Equipment
               </h2>
               <div className="flex flex-col gap-4 text-base mb-4">
-                <ul>
-                  <li>- Equipment 1</li>
-                  <li>- Equipment 2</li>
-                  <li>- Equipment 3</li>
+                <ul className="list-none">
+                  <li>
+                    <strong>Recorders:</strong> Zoom H8
+                  </li>
+                  <li>
+                    <strong>Microphones & Lav Kits:</strong>
+                  </li>
+                  <ul className="ml-4 list-disc">
+                    <li>Sennheiser MKE 600 Shotgun Microphone</li>
+                    <li>Lewitt LCT 240 Pro Compact Condenser Microphone</li>
+                    <li>Zoom XYH-6 microphone Capsule</li>
+                    <li>Korg CM300WHBK Contact Mic</li>
+                  </ul>
+                  <li>
+                    <strong>Microphone Accessories:</strong>
+                  </li>
+                  <ul className="ml-4 list-disc">
+                    <li>Rode Blimp</li>
+                    <li>KOENIG & MEYER 210/9-BLACK Compact Tripod Mic Stand</li>
+                    <li>Zoom Outdoor Microphone Windscreen</li>
+                    <li>JOBY GorillaPod & Manfrotto EVO2 Mini Tripod</li>
+                  </ul>
                 </ul>
               </div>
             </div>
