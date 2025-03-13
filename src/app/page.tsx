@@ -1,6 +1,7 @@
 import ProjectsList from "./_components/ProjectsList";
 import Link from "next/link";
 import { wpGetPostsByCategory, wpGetTagById } from "./_services/wpService";
+import Image from "next/image";
 
 export default async function App() {
   const categoryId = 8;
@@ -26,7 +27,14 @@ export default async function App() {
         <section>
           <div className="bg-main-500 border-2 border-black text-white p-8 grid grid-cols-3 gap-16 relative text-sm">
             <div className="absolute left-4 right-0 top-4 bottom-0 w-full h-full bg-black border-2 border-black z-[-1]" />
-            <div className="w-full h-auto aspect-square border-2 border-black col-span-3 md:col-span-1 bg-white"></div>
+            <div className="w-full h-auto aspect-square border-2 border-black col-span-3 md:col-span-1 bg-white relative">
+              <Image
+                src="/images/images/kevin-gan-profile.jpg"
+                alt="Kevin Gan Profile Photo"
+                layout="fill"
+                objectFit="cover"
+              />
+            </div>
             <div className="col-span-3 md:col-span-2 flex flex-col justify-center">
               <h2 className="text-5xl font-bold font-teko mb-2">
                 Hi, I'm Kevin Gan!
